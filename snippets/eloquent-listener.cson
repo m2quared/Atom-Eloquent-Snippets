@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent model event listener':
+    'prefix': 'eloquent-listener'
+    'body': '/**\n * The "booting" method of the model.\n *\n * @return void\n */\nprotected static function boot()\n{\n    parent::boot();\n\n    // observable events:\n    // creating, created, updating, updated, deleting,\n    // deleted, saving, saved, restoring, restored\n    static::${1:event}(function (\$model) {\n        ${2:// do something with the model, return false to halt}\n    });\n}'

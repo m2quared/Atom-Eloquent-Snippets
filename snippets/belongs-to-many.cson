@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent belongsToMany() (pivot) relation':
+    'prefix': 'btm'
+    'body': '/**\n * ${TM_FILEPATH/^.+\/(\\w+)\\.php$/${1}/} belongs to many (many-to-many) ${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}.\n *\n * @return \\Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\n */\npublic function $1()\n{\n\t// belongsToMany(RelatedModel, pivotTable, thisKeyOnPivot = ${TM_FILEPATH/^.+\\/(\\w+)\\.php$/\\l${1}/}_id, otherKeyOnPivot = ${1/^((.+)ies)|(.+[^s])s$/\\l(?1$2y:$3)/}_id)\n\treturn \\$this->belongsToMany(${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}::class$2)$3;\n}'

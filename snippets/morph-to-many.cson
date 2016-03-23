@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent M-M (owner) polymorphic relation':
+    'prefix': 'morphToMany'
+    'body': '/**\n * ${TM_FILEPATH/^.+\/(\\w+)\\.php$/${1}/} morphs to many (many-to-many) ${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}.\n *\n * @return \\Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\n */\npublic function $1()\n{\n\t// morphToMany(RelatedModel, morphName, pivotTable = ${2/.*/$0s/}, thisKeyOnPivot = ${2/.*/$0/}_id, otherKeyOnPivot = ${1/^((.+)ies)|(.+[^s])s$/\\l(?1$2y:$3)/}_id)\n\treturn \\$this->morphToMany(${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}::class, \'${2:${1/^((.+)ies)|(.+[^s])s$/\\l(?1$2y:$3)/}able}\'$4)$5;\n}'

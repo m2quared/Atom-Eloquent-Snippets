@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent custom newPivot':
+    'prefix': 'newPivot'
+    'body': '/**\n * Custom pivot model.\n *\n * @return \Illuminate\\Database\\Eloquent\\Relations\\Pivot|${3}\n */\npublic function newPivot(Model \\$parent, array \\$attributes, \\$table, \\$exists)\n{\n    if (\\$parent instanceof ${2:related}) {\n        return new ${3:CustomPivot}(\\$parent, \\$attributes, \\$table, \\$exists);\n    }\n\n    return parent::newPivot(\\$parent, \\$attributes, \\$table, \\$exists);\n}'

@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent hasMany count helper relation':
+    'prefix': 'hmc'
+    'body': '/**\n * ${TM_FILEPATH/^.+\/(\\w+)\\.php$/${1}/} has many ${1/.*/\\u$0/} count.\n *\n * @return \\Illuminate\\Database\\Eloquent\\Relations\\HasOne\n */\npublic function $1Count()\n{\n\t// hasOne(RelatedModel, foreignKeyOnRelatedModel = ${TM_FILEPATH/^.+\\/(\\w+)\\.php$/\\l${1}/}_id, localKey = id)\n\treturn \\$this->hasOne(${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}::class, \'${2:${TM_FILEPATH/^.+\\/(\\w+)\\.php$/\\l${1}/}_id}\')\n\t\t->selectRaw(\'count(*) as aggregate, $2\')\n\t\t->groupBy(\'$2\')$5;\n}\n\n/**\n * Convenient accessor for the $1Count relation.\n *\n * @return int\n */\npublic function get${1/.*/\\u$0/}CountAttribute()\n{\n\tif (!\\$this->relationLoaded(\'$1Count\')) {\n\t\t\\$this->load(\'$1Count\');\n\t}\n\n\t\\$relation = \\$this->getRelation(\'$1Count\');\n\n\treturn (\\$relation) ? (int) \\$relation->aggregate : 0;\n}'

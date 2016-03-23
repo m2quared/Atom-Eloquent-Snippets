@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent model table name':
+    'prefix': 'table'
+    'body': '/**\n * The database table used by the model.\n *\n * @var string\n */\nprotected \$table = \'${1:${TM_FILEPATH/^.+\\/(\\w+)\\.php$/\\l${1}s/}}\';'

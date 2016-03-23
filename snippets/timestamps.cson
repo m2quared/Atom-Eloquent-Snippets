@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent timestamps boolean':
+    'prefix': 'timestamps'
+    'body': '/**\n * Indicates if the model should be timestamped.\n *\n * @var boolean\n */\nprotected \$timestamps = $1;'

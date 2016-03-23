@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent 1-M (child) polymorphic relation':
+    'prefix': 'morphTo'
+    'body': '/**\n * ${TM_FILEPATH/^.+\/(\\w+)\\.php$/${1}/} morphs to models in ${1/.*/$0/}_type.\n *\n * @return \\Illuminate\\Database\\Eloquent\\Relations\\MorphTo\n */\npublic function $1()\n{\n\t// morphTo(\\$name = ${1/.*/$0/}, \\$type = ${1/.*/$0/}_type, \\$id = ${1/.*/$0/}_id)\n\t// requires ${1/.*/$0/}_type and ${1/.*/$0/}_id fields on \\$this->table\n\treturn \\$this->morphTo($4)$5;\n}'

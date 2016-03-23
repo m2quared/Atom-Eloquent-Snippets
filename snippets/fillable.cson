@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent mass assignement whitelist':
+    'prefix': 'fillable'
+    'body': '/**\n * Fields that can be mass assigned.\n *\n * @var array\n */\nprotected \$fillable = [$1];'

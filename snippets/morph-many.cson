@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent 1-M (owner) polymorphic relation':
+    'prefix': 'morphMany'
+    'body': '/**\n * ${TM_FILEPATH/^.+\/(\\w+)\\.php$/${1}/} morphs many ${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}.\n *\n * @return \\Illuminate\\Database\\Eloquent\\Relations\\MorphMany\n */\npublic function $1()\n{\n\t// morphMany(MorphedModel, morphableName, type = ${2/.*/$0/}_type, relatedKeyName = ${2/.*/$0/}_id, localKey = id)\n\treturn \\$this->morphMany(${1/^(.+[^s])s?$/\\u$1/}::class, \'${2:${1/^((.+)ies)|(.+[^s])s$/\\l(?1$2y:$3)/}able}\'$4)$5;\n}'

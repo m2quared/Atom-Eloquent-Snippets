@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent M-M (child) polymorphic relation':
+    'prefix': 'morphedByMany'
+    'body': '/**\n * ${TM_FILEPATH/^.+\/(\\w+)\\.php$/${1}/} is morphed by many (many-to-many) ${1/(.+)$/\\u$0/}.\n *\n * @return \\Illuminate\\Database\\Eloquent\\Relations\\MorphedByMany\n */\npublic function $1()\n{\n\t// morphedByMany(RelatedModel, morphName, pivotTable = ${2/.*/$0s/}, thisKeyOnPivot = ${TM_FILEPATH/^.+\\/(\\w+)\\.php$/\\l${1}/}_id, otherKeyOnPivot = ${2/.*/$0/}_id)\n\treturn \\$this->morphedByMany(${1/^((.+)ies)|(.+[^s])s$/\\u(?1$2y:$3)/}::class, \'${2:${TM_FILEPATH/^.+\\/(\\w+)\\.php$/\\l${1}able/}}\'$4)$5;\n}'

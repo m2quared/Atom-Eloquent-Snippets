@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent attribute accessor':
+    'prefix': 'accessor'
+    'body': '/**\n * Accessor for $1 attribute.\n *\n * @return ${3:returnType}\n */\npublic function get${1/.+/\u$0/}Attribute(\\$value)\n{\n\treturn ${2:\\$value};\n}'

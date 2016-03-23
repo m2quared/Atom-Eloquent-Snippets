@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent query scope':
+    'prefix': 'scope'
+    'body': '/**\n * Query scope $1.\n *\n * @param  \Illuminate\\Database\\Eloquent\\Builder\n * @return \\Illuminate\\Database\\Eloquent\\Builder\n */\npublic function scope${1/.+/\\u$0/}(\\$query$2)\n{\n\treturn \\$query->$3;\n}'

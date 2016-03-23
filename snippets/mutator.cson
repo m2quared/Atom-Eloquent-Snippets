@@ -1,0 +1,4 @@
+'.source.php':
+  'Eloquent attribute mutator':
+    'prefix': 'mutator'
+    'body': '/**\n * Mutator for $1 attribute.\n *\n * @return void\n */\npublic function set${1/.+/\u$0/}Attribute(\\$value)\n{\n\t\\$this->attributes[\'$1\'] = ${3}\\$value;\n}'
